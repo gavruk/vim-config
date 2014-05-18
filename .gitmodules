@@ -1,0 +1,102 @@
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "bundle/tlib_vim"]
+	path = bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim_addon_mw_urils"]
+	path = bundle/vim_addon_mw_urils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "bundle/vim_snipmate"]
+	path = bundle/vim_snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "bundle/vim_snippets"]
+	path = bundle/vim_snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "bundle/yankstack"]
+	path = bundle/yankstack
+	url = git@github.com:maxbrunsfeld/vim-yankstack.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
+[submodule "bundle/easymotion"]
+	path = bundle/easymotion
+	url = git@github.com:Lokaltog/vim-easymotion.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "bundle/textobjectify"]
+	path = bundle/textobjectify
+	url = git@github.com:paradigm/TextObjectify.git
+[submodule "bundle/vim-node"]
+	path = bundle/vim-node
+	url = git@github.com:moll/vim-node.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = git@github.com:pangloss/vim-javascript.git
+[submodule "bundle/vim-coffeescript"]
+	path = bundle/vim-coffeescript
+	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = git@github.com:digitaltoad/vim-jade.git
+[submodule "bundle/vim-solarized"]
+	path = bundle/vim-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "bundle/color-molokai"]
+	path = bundle/color-molokai
+	url = git@github.com:tomasr/molokai.git
+[submodule "bundle/emmet"]
+	path = bundle/emmet
+	url = git@github.com:mattn/emmet-vim.git
+[submodule "bundle/tern"]
+	path = bundle/tern
+	url = git@github.com:marijnh/tern_for_vim.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
+[submodule "bundle/gitv"]
+	path = bundle/gitv
+	url = git@github.com:gregsexton/gitv.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "bundle/vim-abolish"]
+	path = bundle/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
+[submodule "bundle/matchtag"]
+	path = bundle/matchtag
+	url = git@github.com:gregsexton/MatchTag.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "bundle/svg_snippets"]
+	path = bundle/svg_snippets
+	url = git@github.com:gavruk/svg_snippets.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = git@github.com:vim-scripts/bufexplorer.zip.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = git@github.com:sjl/gundo.vim.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
