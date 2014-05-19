@@ -4,7 +4,7 @@
 * Wipe out your `~/.vimrc` file and `~/.vim` directory (back up if you wish)
 * `git clone https://github.com/gavruk/vim-config.git ~/.vim`
 * `cd ~/.vim`
-* `sh update-submodules.sh`
+* `git submodule update --init --recursive`
 * `ln ~/.vim/vimrc ~/.vimrc`
 * Start Vim
 
@@ -12,3 +12,7 @@
 
 * ctrp: http://ctags.sourceforge.net/
 * ack.vim: http://beyondgrep.com/
+
+#### Update submodules
+
+`sh update-submodules.sh`
