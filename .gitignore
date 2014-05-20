@@ -1,5 +1,5 @@
 .netrwhist
-.vim/backup
-.vim/temp
-.vim/undo
-.vim/ctrlp_cache
+backup
+temp
+undo
+ctrlp_cache
