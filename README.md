@@ -1,10 +1,18 @@
-VIM config
-==========
-My vim config.
+# Sergey Gavruk Vim Configuration
 
-To apply, copy `.vim` to `~/.vim`, `.vimrc` to `~/.vimrc`.
+#### Install
+* Wipe out your `~/.vimrc` file and `~/.vim` directory (back up if you wish)
+* `git clone https://github.com/gavruk/vim-config.git ~/.vim`
+* `cd ~/.vim`
+* `git submodule update --init --recursive`
+* `ln ~/.vim/vimrc ~/.vimrc`
+* Start Vim
 
-* `sh sync-config.sh`:
-copy vim config to the repo (except `bundle` directory)
-* `sh update-local-bundles.sh`:
-copy `.vim/bundle` from repository to your `~/.vim/bundle` (bundles are git modules)
+#### Requirements
+
+* ctrp: http://ctags.sourceforge.net/
+* ack.vim: http://beyondgrep.com/
+
+#### Update submodules
+
+`sh update-submodules.sh`
