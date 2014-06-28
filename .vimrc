@@ -302,7 +302,16 @@ nnoremap <F5> :GundoToggle<CR>
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
+" Clean trailing whitespace
+nnoremap <leader>cw mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
+
+
+" ================================
+" ===========*AUTOCMD*============
+" ================================
 
 if has("autocmd") && exists("+omnifunc")
      autocmd Filetype *
@@ -323,6 +332,15 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType go set omnifunc=gocomplete#Complete
 
 if has("autocmd")
+    " Make sure Vim returns to the same line when you reopen a file.
+    augroup line_return
+        au!
+        au BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \     execute 'normal! g`"zvzz' |
+            \ endif
+    augroup END
+
     augroup vimrcAu
         " Clear!
         au!

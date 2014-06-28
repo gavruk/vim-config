@@ -12,6 +12,7 @@
 
 * ctrp: http://ctags.sourceforge.net/
 * ack.vim: http://beyondgrep.com/
+* Python (for bundle/conque)
 
 #### Update submodules
 
