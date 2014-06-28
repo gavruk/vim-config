@@ -4,7 +4,6 @@ set nocompatible
 
 " Before we do anything, lets get pathogen up 
 execute pathogen#infect()
-call pathogen#helptags()
 
 
   " file type detection
