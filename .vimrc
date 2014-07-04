@@ -68,7 +68,7 @@ set mousehide
 set mousemodel=popup
 
 set splitbelow
-
+set splitright
 
 set formatoptions=tcqor
 set cpoptions=aABceFsmq
@@ -129,8 +129,10 @@ set list " we do want to show tabs and tailing to ensure we get them out of my f
 set listchars=tab:>-,trail:- " show tabs and trailing
 set nostartofline " leave my cursor where it was
 
-"set completeopt=menuone " don't use a pop up menu for completions
+" Better Completion
+set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
+
 set nowrap " do not wrap line
 set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
 
@@ -207,8 +209,12 @@ set title
 "tf: improves redrawing for newer computers
 set ttyfast
 
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
 set timeoutlen=1200 " A little bit more time for macros
-set ttimeoutlen=50  " Make Esc work faster
 
   " Make completion more like bash
 set wildmode=longest,list,full
@@ -231,6 +237,7 @@ set showfulltag
 set cul
 hi CursorLine term=none cterm=none ctermbg=16
 
+set dictionary=/usr/share/dict/words
 
 
 " ================================
@@ -308,6 +315,9 @@ nnoremap <leader>cw mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 
+" Clean trailing whitespace
+nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+
 
 " ================================
 " ===========*AUTOCMD*============
@@ -332,6 +342,12 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType go set omnifunc=gocomplete#Complete
 
 if has("autocmd")
+    " Save when losing focus
+    au FocusLost * :silent! wall
+
+    " Resize splits when the window is resized
+    au VimResized * :wincmd =
+
     " Make sure Vim returns to the same line when you reopen a file.
     augroup line_return
         au!
