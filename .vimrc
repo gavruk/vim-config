@@ -279,6 +279,8 @@ imap jj <esc>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+nnoremap <silent> <leader>no :e ~/notes.txt<CR>
+
 nnoremap j gj
 nnoremap k gk
 
