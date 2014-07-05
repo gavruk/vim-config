@@ -19,7 +19,7 @@
 `sh update-submodules.sh`
 
 
-#### Installing YouCompleteMe
+#### Installing [YouCompleteMe](http://valloric.github.io/YouCompleteMe/)
 
 * Install CMake
 
