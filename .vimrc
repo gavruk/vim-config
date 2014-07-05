@@ -341,7 +341,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
-autocmd FileType go set omnifunc=gocomplete#Complete
+"autocmd FileType go set omnifunc=gocomplete#Complete
 
 if has("autocmd")
     " Save when losing focus
@@ -369,9 +369,10 @@ if has("autocmd")
         au BufRead,BufNewFile *.rb,*.rhtml,*.js set sw=2 sts=2 " ruby likes two 
 
         " Go setup assumptions: golint, gocode, gotags all in path
-        au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
-        au BufWritePre *.go Fmt
+        "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
+        "au BufWritePre *.go Fmt
         au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+        
         au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
 
         " Override types
