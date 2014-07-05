@@ -22,9 +22,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git@github.com:ervandew/supertab.git
 [submodule "bundle/yankstack"]
 	path = bundle/yankstack
 	url = git@github.com:maxbrunsfeld/vim-yankstack.git
@@ -118,3 +115,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = git@github.com:Valloric/YouCompleteMe.git
