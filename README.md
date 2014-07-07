@@ -8,11 +8,11 @@
 * `ln ~/.vim/vimrc ~/.vimrc`
 * Start Vim
 
-#### Requirements
+#### Dependencies
 
-* ctrp: http://ctags.sourceforge.net/
-* ack.vim: http://beyondgrep.com/
-* Python (for YouCompleteMe)
+* ctrp: [Ctags](http://ctags.sourceforge.net/)
+* ack.vim: [Ack](http://beyondgrep.com/)
+* YouCompleteMe: [Python](https://www.python.org/)
 
 #### Update submodules
 
