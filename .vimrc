@@ -6,11 +6,11 @@ set nocompatible
 execute pathogen#infect()
 
 
-  " file type detection
+" file type detection
 filetype on
-  " special indentation rules for file type
+" special indentation rules for file type
 filetype indent on
-  " auto-completion rules for file type
+" auto-completion rules for file type
 filetype plugin on
 
 syntax on
@@ -20,21 +20,21 @@ syntax on
 let s:running_windows = has("win16") || has("win32") || has("win64")
 
 if s:running_windows
-    set backupdir=~/vimfiles/backup " where to put backup files
-    set undodir=~/vimfiles/undo " where to put undo files
-    set directory=~/vimfiles/temp " directory to place swap files in
+  set backupdir=~/vimfiles/backup " where to put backup files
+  set undodir=~/vimfiles/undo " where to put undo files
+  set directory=~/vimfiles/temp " directory to place swap files in
 
-    set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
+  set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
 
-    let g:ctrlp_cache_dir = $HOME.'/vimfiles/ctrlp_cache'
+  let g:ctrlp_cache_dir = $HOME.'/vimfiles/ctrlp_cache'
 else
-    set backupdir=~/.vim/backup " where to put backup files
-    set undodir=~/.vim/undo " where to put undo files
-    set directory=~/.vim/temp " directory to place swap files in
+  set backupdir=~/.vim/backup " where to put backup files
+  set undodir=~/.vim/undo " where to put undo files
+  set directory=~/.vim/temp " directory to place swap files in
 
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-    let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp_cache'
+  let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp_cache'
 endif
 
 runtime macros/matchit.vim
@@ -66,6 +66,9 @@ set cmdheight=2
 set mousehide
 
 set mousemodel=popup
+
+" Set to auto read when a file is changed from the outside
+set autoread
 
 set splitbelow
 set splitright
@@ -110,9 +113,9 @@ set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 " Note that | need to be escaped AND preceeded by a literal backslash
 set formatlistpat=^\\s*\\(\\d\\\|[-*]\\)\\+[\\]:.)}\\t\ ]\\s* "and bullets, too
 
-  " Use incremental searches
+" Use incremental searches
 set incsearch
-  " highlight search terms
+" highlight search terms
 set hls
 
 set clipboard+=unnamed
@@ -145,9 +148,10 @@ set foldnestmax=1 " I only like to fold outer functions
 set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
 
 
-  " Show line numbers
+" Show line numbers
 set number
 set numberwidth=5 " We are good up to 99999 lines
+
 
 "default indent settings
 set shiftwidth=4
@@ -159,29 +163,31 @@ set expandtab
 set autoindent
 " Automatically inserts one extra level of indentation in some cases (for example, after { )
 set smartindent
+" Be smart when using tabs ;)
+set smarttab
 
-  " 1000 undos
+" 1000 undos
 set undolevels=1000
 
-  " Jump 5 lines when running out of the screen
+" Jump 5 lines when running out of the screen
 set scrolljump=5
 
-  " Indicate jump out of the screen when 3 lines before end of the screen
-set scrolloff=3
+" Indicate jump out of the screen when 7 lines before end of the screen
+set scrolloff=7
 
-  " Repair wired terminal/vim settings
+" Repair wired terminal/vim settings
 set backspace=indent,eol,start
 
-  " CaseInsensitive searches
+" CaseInsensitive searches
 set ignorecase
 set infercase " case inferred by default
 
 set showcmd " show the command being typed
-  " Always show command or insert mode
+" Always show command or insert mode
 set showmode
-  " Show line and column information
+" Show line and column information
 set ruler
-  " Show matching brackets
+" Show matching brackets
 set showmatch
 
 " Make sure that unsaved buffers that are to be put in the background are 
@@ -192,13 +198,13 @@ set history=1000
 
 set smartcase
 
-  " For regular expressions turn magic on
+" For regular expressions turn magic on
 set magic
 
 " Automatically read a file that has changed on disk
 set autoread
 
-  " No annoying sound on errors
+" No annoying sound on errors
 set noerrorbells
 set visualbell
 set t_vb=
@@ -216,17 +222,17 @@ set ttimeout
 set ttimeoutlen=10
 set timeoutlen=1200 " A little bit more time for macros
 
-  " Make completion more like bash
+" Make completion more like bash
 set wildmode=longest,list,full
 set wildmenu
-  " Ignore compiled files
+" Ignore compiled files
 set wildignore=*.pyo,*.pyc,*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png " ignore these
 set wildignore+=tags
 
 
 set wildmode=list:longest " turn on wild mode huge list
 
-  " Cure hangs during compiles?
+" Cure hangs during compiles?
 set swapsync=
 
 set t_Co=256
@@ -248,7 +254,7 @@ nnoremap ' `
 
 nnoremap ` '
 
-nnoremap <Leader>q :q!<CR>
+"nnoremap <Leader>q :q!<CR>
 "nnoremap <Leader>s :w<CR>
 "nnoremap <Leader>w :wq<CR>
 
@@ -260,7 +266,7 @@ nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 nnoremap <leader><space> :noh<cr>
 
-  " Working with tabs"
+" Working with tabs"
 noremap <silent> <Leader>tn :tabnew<CR>
 noremap <silent> <Leader>th :tabprev<CR>
 noremap <silent> <Leader>tl :tabnext<CR>
@@ -272,6 +278,20 @@ vmap <S-Tab> <gv
 " Use the bufkill plugin to eliminate a buffer but keep the window layout
 nmap ,bd :BD<cr>
 
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -281,8 +301,6 @@ nnoremap <silent> <leader>no :e ~/notes.txt<CR>
 
 nnoremap j gj
 nnoremap k gk
-
-nnoremap <Leader><Tab> <C-w>w
 
 nnoremap <leader>. :CtrlPTag<cr>
 
@@ -309,6 +327,11 @@ nnoremap <F5> :GundoToggle<CR>
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
+imap <C-o> <ESC>a<Plug>snipMateNextOrTrigger
+smap <C-o> <Plug>snipMateNextOrTrigger
+
+
+
 " Clean trailing whitespace
 nnoremap <leader>cw mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
@@ -324,10 +347,10 @@ nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 " ================================
 
 if has("autocmd") && exists("+omnifunc")
-     autocmd Filetype *
-   \ if &omnifunc == "" |
-   \   setlocal omnifunc=syntaxcomplete#Complete |
-   \ endif
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
 endif
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -342,51 +365,63 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 "autocmd FileType go set omnifunc=gocomplete#Complete
 
 if has("autocmd")
-    " Save when losing focus
-    au FocusLost * :silent! wall
+  " Save when losing focus
+  au FocusLost * :silent! wall
 
-    " Resize splits when the window is resized
-    au VimResized * :wincmd =
+  " Resize splits when the window is resized
+  au VimResized * :wincmd =
 
-    " Make sure Vim returns to the same line when you reopen a file.
-    augroup line_return
-        au!
-        au BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \     execute 'normal! g`"zvzz' |
-            \ endif
-    augroup END
+  " Make sure Vim returns to the same line when you reopen a file.
+  augroup line_return
+    au!
+    au BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \     execute 'normal! g`"zvzz' |
+          \ endif
+  augroup END
 
-    augroup vimrcAu
-        " Clear!
-        au!
+  augroup vimrcAu
+    " Clear!
+    au!
 
-        autocmd Syntax javascript setlocal isk+=$
+    autocmd Syntax javascript setlocal isk+=$
 
-        " Things that use two spaces rather than four
-        au BufRead,BufNewFile *.rb,*.rhtml,*.js set sw=2 sts=2 " ruby likes two 
+    " Things that use two spaces rather than four
+    au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2 " ruby likes two 
+    au BufRead,BufNewFile *.js set sw=2 sts=2
 
-        " Go setup assumptions: golint, gocode, gotags all in path
-        "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
-        "au BufWritePre *.go Fmt
-        "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-        
-        au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
+    " Go setup assumptions: golint, gocode, gotags all in path
+    "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
+    "au BufWritePre *.go Fmt
+    "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
-        " Override types
-        au BufNewFile,BufRead *.ahk set filetype=ahk " Autohotkey
-        au BufNewFile,BufRead *.ps1 set filetype=ps1 " Powershell
-        au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
-        au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
+    au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
 
-        au BufNewFile,BufRead *.ejs set filetype=html
-        " ctags
-        au BufWritePost *.c,*.cpp,*.h,*.go,*.js silent! !ctags -R &
+    " Override types
+    au BufNewFile,BufRead *.ahk set filetype=ahk " Autohotkey
+    au BufNewFile,BufRead *.ps1 set filetype=ps1 " Powershell
+    au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
+    au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
 
-        " markdown shortcut
-        au BufRead,BufNewFile *.md set filetype=markdown
-    augroup END
+    au BufNewFile,BufRead *.ejs set filetype=html
+
+    " ctags
+    au BufWritePost *.c,*.cpp,*.h,*.go,*.js silent! !ctags -R &
+
+    " markdown shortcut
+    au BufRead,BufNewFile *.md set filetype=markdown
+  augroup END
 endif
+
+
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
 " Plugin Settings 
@@ -404,10 +439,10 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_max_depth = 100
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build|public/lib)$',
-  \ 'file': '\v\.(exe|so|dll|min.js|css|map)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+      \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build|public/lib)$',
+      \ 'file': '\v\.(exe|so|dll|min.js|css|map)$',
+      \ 'link': 'some_bad_symbolic_links',
+      \ }
 
 
 " ==================================
@@ -419,32 +454,32 @@ let g:tagbar_ctags_bin = 'ctags'
 " requires gotags in path
 " go get -u github.com/jstemmer/gotags
 let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
+      \ 'ctagstype' : 'go',
+      \ 'kinds'     : [
+      \ 'p:package',
+      \ 'i:imports:1',
+      \ 'c:constants',
+      \ 'v:variables',
+      \ 't:types',
+      \ 'n:interfaces',
+      \ 'w:fields',
+      \ 'e:embedded',
+      \ 'm:methods',
+      \ 'r:constructor',
+      \ 'f:functions'
+      \ ],
+      \ 'sro' : '.',
+      \ 'kind2scope' : {
+      \ 't' : 'ctype',
+      \ 'n' : 'ntype'
+      \ },
+      \ 'scope2kind' : {
+      \ 'ctype' : 't',
+      \ 'ntype' : 'n'
+      \ },
+      \ 'ctagsbin'  : 'gotags',
+      \ 'ctagsargs' : '-sort -silent'
+      \ }
 
 
 " ==================================
@@ -466,13 +501,13 @@ let g:syntastic_always_populate_loc_list = 1
 " RENAME CURRENT FILE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
