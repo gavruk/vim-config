@@ -253,6 +253,7 @@ nnoremap <Leader>q :q!<CR>
 "nnoremap <Leader>w :wq<CR>
 
 inoremap jk <ESC>
+imap jj <esc>
 
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
@@ -260,10 +261,10 @@ nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 nnoremap <leader><space> :noh<cr>
 
   " Working with tabs"
-"noremap <silent> <C-n> :tabnew<CR>
-noremap <silent> <C-[> :tabprev<CR>
-noremap <silent> <C-]> :tabnext<CR>
-"noremap <silent> <C-w> :tabclose<CR>"
+noremap <silent> <Leader>tn :tabnew<CR>
+noremap <silent> <Leader>th :tabprev<CR>
+noremap <silent> <Leader>tl :tabnext<CR>
+noremap <silent> <Leader>tc :tabclose<CR>
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
@@ -271,9 +272,6 @@ vmap <S-Tab> <gv
 " Use the bufkill plugin to eliminate a buffer but keep the window layout
 nmap ,bd :BD<cr>
 
-nnoremap <F3> :b#<CR>
-
-imap jj <esc>
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -287,8 +285,6 @@ nnoremap k gk
 nnoremap <Leader><Tab> <C-w>w
 
 nnoremap <leader>. :CtrlPTag<cr>
-
-nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 
 map <Leader>d :NERDTreeToggle<CR>
@@ -306,6 +302,8 @@ nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
 map <F2> :ls<CR>:b<Space>
+nnoremap <F3> :b#<CR>
+nnoremap <F4> :TagbarToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
 imap <c-e> <c-o>$
@@ -371,7 +369,7 @@ if has("autocmd")
         " Go setup assumptions: golint, gocode, gotags all in path
         "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
         "au BufWritePre *.go Fmt
-        au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+        "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
         
         au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
 
@@ -381,6 +379,7 @@ if has("autocmd")
         au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
         au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
 
+        au BufNewFile,BufRead *.ejs set filetype=html
         " ctags
         au BufWritePost *.c,*.cpp,*.h,*.go,*.js silent! !ctags -R &
 
