@@ -37,6 +37,11 @@ else
   let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp_cache'
 endif
 
+if has('gui_running')
+  set guifont=Anonymous\ Pro\ for\ Powerline:h13
+  let g:airline_powerline_fonts = 1
+endif
+
 runtime macros/matchit.vim
 
 " With a map leader it's possible to do extra key combinations
@@ -296,6 +301,8 @@ endif
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Quuickly edit abolish list
+nmap <silent> <leader>ea :e ~/.vim/after/plugin/abolish.vim<CR>
 
 nnoremap <silent> <leader>no :e ~/notes.txt<CR>
 
@@ -335,11 +342,9 @@ smap <C-o> <Plug>snipMateNextOrTrigger
 " Clean trailing whitespace
 nnoremap <leader>cw mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
+" Select all
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
-
-" Clean trailing whitespace
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 
 " ================================
@@ -422,11 +427,6 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-
-" Plugin Settings 
-let g:SuperTabDefaultCompletionType = "context"
-
 
 " ==================================
 " ==============*CTRLP*=============
