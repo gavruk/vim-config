@@ -303,8 +303,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Quuickly edit abolish list
 nmap <silent> <leader>ea :e ~/.vim/after/plugin/abolish.vim<CR>
 
-nnoremap <silent> <leader>no :e ~/notes.txt<CR>
-
 nnoremap j gj
 nnoremap k gk
 
@@ -479,6 +477,8 @@ let g:tagbar_type_go = {
       \ 'ctagsbin'  : 'gotags',
       \ 'ctagsargs' : '-sort -silent'
       \ }
+
+let g:notes_directories = ['~/.notes']
 
 
 " ==================================

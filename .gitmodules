@@ -124,3 +124,9 @@
 [submodule "bundle/js-indent"]
 	path = bundle/js-indent
 	url = git@github.com:vim-scripts/JavaScript-Indent.git
+[submodule "bundle/vim-notes"]
+	path = bundle/vim-notes
+	url = git@github.com:xolox/vim-notes.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = git@github.com:xolox/vim-misc.git
