@@ -234,7 +234,6 @@ set wildmenu
 set wildignore=*.pyo,*.pyc,*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png " ignore these
 set wildignore+=tags
 
-
 set wildmode=list:longest " turn on wild mode huge list
 
 " Cure hangs during compiles?
