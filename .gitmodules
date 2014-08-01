@@ -130,3 +130,6 @@
 [submodule "bundle/vim-misc"]
 	path = bundle/vim-misc
 	url = git@github.com:xolox/vim-misc.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git@github.com:benmills/vimux.git
