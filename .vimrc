@@ -39,8 +39,9 @@ endif
 
 if has('gui_running')
   set guifont=Anonymous\ Pro\ for\ Powerline:h13
-  let g:airline_powerline_fonts = 1
 endif
+
+let g:airline_powerline_fonts = 1
 
 runtime macros/matchit.vim
 
@@ -441,7 +442,7 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_max_depth = 100
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build|public/lib)$',
+      \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build|public)$',
       \ 'file': '\v\.(exe|so|dll|min.js|css|map)$',
       \ 'link': 'some_bad_symbolic_links',
       \ }

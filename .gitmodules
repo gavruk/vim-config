@@ -139,6 +139,6 @@
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter.git
-[submodule "bundle/minibufexpl"]
-	path = bundle/minibufexpl
-	url = git@github.com:fholgado/minibufexpl.vim.git
+[submodule "bundle/vim-js-syntax"]
+	path = bundle/vim-js-syntax
+	url = git@github.com:jelera/vim-javascript-syntax.git
