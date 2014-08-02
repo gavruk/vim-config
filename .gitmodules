@@ -142,3 +142,6 @@
 [submodule "bundle/vim-js-syntax"]
 	path = bundle/vim-js-syntax
 	url = git@github.com:jelera/vim-javascript-syntax.git
+[submodule "bundle/vim-tmux-navigator"]
+	path = bundle/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git

@@ -66,7 +66,7 @@ set background=dark
 set fenc=utf-8 " UTF-8
 set encoding=utf-8
 
-set cmdheight=1
+set cmdheight=2
 
 " Hide the mouse pointer while typing
 set mousehide
@@ -442,7 +442,7 @@ let g:ctrlp_max_files = 100000
 let g:ctrlp_max_depth = 100
 let g:ctrlp_follow_symlinks = 0
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build|public)$',
+      \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|bower_components|target|dist|build)$',
       \ 'file': '\v\.(exe|so|dll|min.js|css|map)$',
       \ 'link': 'some_bad_symbolic_links',
       \ }
@@ -615,3 +615,26 @@ function MyTabLine()
     endif
     return s
 endfunction
+
+
+
+
+
+
+
+
+
+
+" source vimrc.local is exists
+if filereadable(glob(".vimrc.local"))
+  " In your .vimrc.local, you might like:
+  "
+  " set autowrite
+  " set nocursorline
+  " set nowritebackup
+  " set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
+  "
+  " autocmd! bufwritepost .vimrc source ~/.vimrc
+  " noremap! jj <ESC>
+  source .vimrc.local
+endif
