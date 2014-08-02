@@ -13,6 +13,7 @@
 * ctrp: [Ctags](http://ctags.sourceforge.net/)
 * ack.vim: [Ack](http://beyondgrep.com/)
 * YouCompleteMe: [Python](https://www.python.org/)
+* Ctags support for go: [Gotags](https://github.com/jstemmer/gotags)
 
 #### Update submodules
 
