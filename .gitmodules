@@ -109,9 +109,6 @@
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
 	url = git@github.com:ap/vim-css-color.git
-[submodule "bundle/crunch"]
-	path = bundle/crunch
-	url = git@github.com:arecarn/crunch.git
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
