@@ -413,7 +413,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.ejs set filetype=html
 
     " ctags
-    au BufWritePost *.c,*.cpp,*.h,*.go,*.js silent! !ctags -R &
+    au BufWritePost *.c,*.cpp,*.h,*.go,*js silent! !ctags -R &
 
     " markdown shortcut
     au BufRead,BufNewFile *.md set filetype=markdown
@@ -483,6 +483,9 @@ let g:tagbar_type_go = {
       \ 'ctagsargs' : '-sort -silent'
       \ }
 
+" ==================================
+" ===============*NOTE*=============
+" ==================================
 let g:notes_directories = ['~/.notes']
 
 
