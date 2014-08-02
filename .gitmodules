@@ -94,9 +94,6 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git@github.com:sjl/gundo.vim.git
-[submodule "bundle/auto-pairs"]
-	path = bundle/auto-pairs
-	url = git@github.com:jiangmiao/auto-pairs.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
@@ -142,3 +139,6 @@
 [submodule "bundle/vim-tmux-navigator"]
 	path = bundle/vim-tmux-navigator
 	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "bundle/delimitmate"]
+	path = bundle/delimitmate
+	url = git@github.com:Raimondi/delimitMate.git
