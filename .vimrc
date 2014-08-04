@@ -533,7 +533,7 @@ let g:ack_default_options = " -s -i -H --nocolor --nogroup --column"
 " ==================================
 
 let NERDTreeMapOpenInTab='<Leader>n'
-let NERDTreeIgnore = ['\.beam', '\.pyc', 'ebin', 'bin', 'pkg', '\.so', '\.dll', 'tags']
+let NERDTreeIgnore = ['\.beam', '\.pyc', 'ebin', 'bin', 'pkg', '\.so', '\.dll', '\tags']
 let g:NERDTreeWinSize = 40
 
 

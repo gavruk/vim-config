@@ -142,3 +142,6 @@
 [submodule "bundle/delimitmate"]
 	path = bundle/delimitmate
 	url = git@github.com:Raimondi/delimitMate.git
+[submodule "bundle/vim-startify"]
+	path = bundle/vim-startify
+	url = git@github.com:mhinz/vim-startify.git
