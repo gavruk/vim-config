@@ -397,6 +397,7 @@ if has("autocmd")
     " Things that use two spaces rather than four
     au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2 " ruby likes two 
     au BufRead,BufNewFile *.js set sw=2 sts=2
+    au BufRead,BufNewFile *.html set sw=2 sts=2
 
     " Go setup assumptions: golint, gocode, gotags all in path
     "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
