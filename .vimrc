@@ -250,6 +250,8 @@ hi CursorLine term=none cterm=none ctermbg=16
 
 set dictionary=/usr/share/dict/words
 
+set shortmess=a
+
 
 " ================================
 " ===========*MAPPING*============
@@ -270,6 +272,8 @@ nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
 
 nnoremap <leader><space> :noh<cr>
+
+imap <C-Space> <C-X><C-O>
 
 " Working with tabs"
 noremap <silent> <Leader>tn :tabnew<CR>
@@ -366,7 +370,6 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
