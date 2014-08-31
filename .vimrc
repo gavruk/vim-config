@@ -60,7 +60,7 @@ map <right> <nop>
 " ================================
 " ================================
 
-colorscheme molokai
+colorscheme solarized
 set background=dark
 
 set fenc=utf-8 " UTF-8
