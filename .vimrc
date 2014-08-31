@@ -529,6 +529,8 @@ let g:tagbar_iconchars = ['+', '-']
 
 let g:ack_default_options = " -s -i -H --nocolor --nogroup --column"
 
+let g:html_indent_inctags='html,body,head,tbody'
+
 " ==================================
 " ============*NERDTree*============
 " ==================================
