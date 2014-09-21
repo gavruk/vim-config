@@ -1,0 +1,227 @@
+" file type detection
+filetype on
+" special indentation rules for file type
+filetype indent on
+" auto-completion rules for file type
+filetype plugin on
+
+syntax on
+
+" OS Dependant things
+
+let s:running_windows = has("win16") || has("win32") || has("win64")
+
+if s:running_windows
+  set backupdir=~/vimfiles/backup " where to put backup files
+  set undodir=~/vimfiles/undo " where to put undo files
+  set directory=~/vimfiles/temp " directory to place swap files in
+
+  set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
+else
+  set backupdir=~/.vim/backup " where to put backup files
+  set undodir=~/.vim/undo " where to put undo files
+  set directory=~/.vim/temp " directory to place swap files in
+
+  set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+endif
+
+if has('gui_running')
+  set guifont=Anonymous\ Pro\ for\ Powerline:h13
+endif
+
+let g:airline_powerline_fonts = 1
+
+runtime macros/matchit.vim
+
+
+colorscheme solarized
+set background=dark
+
+set fenc=utf-8 " UTF-8
+set encoding=utf-8
+
+set cmdheight=2
+
+" Hide the mouse pointer while typing
+set mousehide
+
+set mousemodel=popup
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+set splitbelow
+set splitright
+
+set formatoptions=tcqor
+set cpoptions=aABceFsmq
+"             |||||||||
+"             ||||||||+-- When joining lines, leave the cursor between joined lines
+"             |||||||+-- When a new match is created (showmatch) pause for .5
+"             ||||||+-- Set buffer options when entering the buffer
+"             |||||+-- :write command updates current file name automatically add <CR> to the last line when using :@r
+"             |||+-- Searching continues at the end of the match at the cursor position
+"             ||+-- A backslash has no special meaning in mappings
+"             |+-- :write updates alternative file name
+"             +-- :read updates alternative file name
+set whichwrap=b,s,h,l,<,>,~,[,] " everything wraps
+"             | | | | | | | | |
+"             | | | | | | | | +-- "]" Insert and Replace
+"             | | | | | | | +-- "[" Insert and Replace
+"             | | | | | | +-- "~" Normal
+"             | | | | | +-- <Right> Normal and Visual
+"             | | | | +-- <Left> Normal and Visual
+"             | | | +-- "l" Normal and Visual (not recommended)
+"             | | +-- "h" Normal and Visual (not recommended)
+"             | +-- <Space> Normal and Visual
+"             +-- <BS> Normal and Visual
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+"              | | | | |  |   |      |  |     |    |
+"              | | | | |  |   |      |  |     |    + current column
+"              | | | | |  |   |      |  |     +-- current line
+"              | | | | |  |   |      |  +-- current % into file
+"              | | | | |  |   |      +-- current syntax in square brackets
+"              | | | | |  |   +-- current fileformat
+"              | | | | |  +-- number of lines
+"              | | | | +-- preview flag in square brackets
+"              | | | +-- help flag in square brackets
+"              | | +-- readonly flag in square brackets
+"              | +-- rodified flag in square brackets
+"              +-- full path to file in the buffer
+
+" Recognise lists like 1), 1., a), a., and so on
+" Note that | need to be escaped AND preceeded by a literal backslash
+set formatlistpat=^\\s*\\(\\d\\\|[-*]\\)\\+[\\]:.)}\\t\ ]\\s* "and bullets, too
+
+" Use incremental searches
+set incsearch
+" highlight search terms
+set hls
+
+set clipboard+=unnamed
+
+set backup
+set history=99999 " big old history
+
+set fileformats=unix,dos,mac " support all three, in this order
+
+set laststatus=2 " always show the status line
+set lazyredraw " do not redraw while running macros
+set linespace=0 " don't insert any extra pixel lines betweens rows
+set list " we do want to show tabs and tailing to ensure we get them out of my files
+set listchars=tab:>-,trail:- " show tabs and trailing
+set nostartofline " leave my cursor where it was
+
+" Better Completion
+set complete=.,w,b,u,t
+set completeopt=longest,menuone,preview
+
+set nowrap " do not wrap line
+set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
+
+" Folding 
+set foldenable " Turn on folding
+set foldmethod=indent " Fold on the indent
+set foldmarker={,} " use simple markers
+set foldlevel=100 " Don't autofold anything (but I can still fold manually)
+set foldnestmax=1 " I only like to fold outer functions
+set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
+
+
+" Show line numbers
+set number
+set numberwidth=5 " We are good up to 99999 lines
+
+
+"default indent settings
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+" Auto expand tabs to spaces
+set expandtab
+" Copy the indentation from the previous line, when starting a new line
+set autoindent
+" Automatically inserts one extra level of indentation in some cases (for example, after { )
+set smartindent
+" Be smart when using tabs ;)
+set smarttab
+
+" 1000 undos
+set undolevels=1000
+
+" Jump 5 lines when running out of the screen
+set scrolljump=5
+
+" Indicate jump out of the screen when 7 lines before end of the screen
+set scrolloff=7
+
+" Repair wired terminal/vim settings
+set backspace=indent,eol,start
+
+" CaseInsensitive searches
+set ignorecase
+set infercase " case inferred by default
+
+set showcmd " show the command being typed
+" Always show command or insert mode
+set showmode
+" Show line and column information
+set ruler
+" Show matching brackets
+set showmatch
+
+" Make sure that unsaved buffers that are to be put in the background are 
+" allowed to go in there (ie. the "must save first" error doesn't come up)
+set hidden " you can change buffers without saving
+
+set history=1000
+
+set smartcase
+
+" For regular expressions turn magic on
+set magic
+
+" Automatically read a file that has changed on disk
+set autoread
+
+" No annoying sound on errors
+set noerrorbells
+set visualbell
+set t_vb=
+set tm=500
+
+set title
+
+"tf: improves redrawing for newer computers
+set ttyfast
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+set timeoutlen=1200 " A little bit more time for macros
+
+" Make completion more like bash
+set wildmode=longest,list,full
+set wildmenu
+" Ignore compiled files
+set wildignore=*.pyo,*.pyc,*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png " ignore these
+set wildignore+=tags
+
+set wildmode=list:longest " turn on wild mode huge list
+
+" Cure hangs during compiles?
+set swapsync=
+
+set t_Co=256
+
+" When completing by tag, show the whole tag, not just the function name
+set showfulltag
+
+set cul
+hi CursorLine term=none cterm=none ctermbg=16
+
+set dictionary=/usr/share/dict/words
+
+set shortmess=a

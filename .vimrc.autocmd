@@ -1,0 +1,77 @@
+if has("autocmd") && exists("+omnifunc")
+  autocmd Filetype *
+        \ if &omnifunc == "" |
+        \   setlocal omnifunc=syntaxcomplete#Complete |
+        \ endif
+endif
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType java set omnifunc=javacomplete#Complete
+"autocmd FileType go set omnifunc=gocomplete#Complete
+
+if has("autocmd")
+  " Save when losing focus
+  au FocusLost * :silent! wall
+
+  " Resize splits when the window is resized
+  au VimResized * :wincmd =
+
+  " Make sure Vim returns to the same line when you reopen a file.
+  augroup line_return
+    au!
+    au BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \     execute 'normal! g`"zvzz' |
+          \ endif
+  augroup END
+
+  augroup vimrcAu
+    " Clear!
+    au!
+
+    autocmd Syntax javascript setlocal isk+=$
+
+    " Things that use two spaces rather than four
+    au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2 " ruby likes two 
+    au BufRead,BufNewFile *.js set sw=2 sts=2
+    au BufRead,BufNewFile *.html set sw=2 sts=2
+
+    " Go setup assumptions: golint, gocode, gotags all in path
+    "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
+    "au BufWritePre *.go Fmt
+    "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+    au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
+
+    " Override types
+    au BufNewFile,BufRead *.ahk set filetype=ahk " Autohotkey
+    au BufNewFile,BufRead *.ps1 set filetype=ps1 " Powershell
+    au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
+    au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
+
+    au BufNewFile,BufRead *.ejs set filetype=html
+
+    " ctags
+    au BufWritePost *.c,*.cpp,*.h,*.go,*js silent! !ctags -R &
+
+    " markdown shortcut
+    au BufRead,BufNewFile *.md set filetype=markdown
+  augroup END
+endif
+
+
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
