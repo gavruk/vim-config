@@ -5,7 +5,12 @@
 * `git clone https://github.com/gavruk/vim-config.git ~/.vim`
 * `cd ~/.vim`
 * `git submodule update --init --recursive`
-* `ln ~/.vim/vimrc ~/.vimrc`
+* `ln ~/.vim/.vimrc ~/.vimrc`
+* `cd ~/vim/bundle/youcompleteme`
+* `./install`
+* `cd ~/vim/bundle/term`
+* `npm install`
+* `mkdir ~/.vim/undo ~/.vim/temp ~/.vim/backup`
 * Start Vim
 
 #### Dependencies
