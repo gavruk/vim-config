@@ -18,7 +18,7 @@ map <Leader>n :call RenameFile()<cr>
 "
 :hi TabLineFill term=bold cterm=bold ctermbg=Black
 :hi TabLine ctermfg=White ctermbg=Black
-:hi TabLineSel ctermfg=Black ctermbg=White
+:hi TabLineSel ctermfg=Black ctermbg=Blue
 
 set tabline=%!MyTabLine()  " custom tab pages line
 function MyTabLine()

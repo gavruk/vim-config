@@ -98,6 +98,8 @@ set incsearch
 " highlight search terms
 set hls
 
+set autoread
+
 set clipboard+=unnamed
 
 set backup
