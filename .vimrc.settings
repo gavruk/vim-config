@@ -12,16 +12,8 @@ syntax on
 let s:running_windows = has("win16") || has("win32") || has("win64")
 
 if s:running_windows
-  set backupdir=~/vimfiles/backup " where to put backup files
-  set undodir=~/vimfiles/undo " where to put undo files
-  set directory=~/vimfiles/temp " directory to place swap files in
-
   set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
 else
-  set backupdir=~/.vim/backup " where to put backup files
-  set undodir=~/.vim/undo " where to put undo files
-  set directory=~/.vim/temp " directory to place swap files in
-
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 endif
 
@@ -33,6 +25,8 @@ let g:airline_powerline_fonts = 1
 
 runtime macros/matchit.vim
 
+set nobackup
+set noswapfile
 
 colorscheme solarized
 set background=dark
