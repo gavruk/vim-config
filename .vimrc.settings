@@ -1,3 +1,6 @@
+let s:running_windows = has("win16") || has("win32") || has("win64")
+let s:gui_running = has('gui_running')
+
 " file type detection
 filetype on
 " special indentation rules for file type
@@ -9,15 +12,13 @@ syntax on
 
 " OS Dependant things
 
-let s:running_windows = has("win16") || has("win32") || has("win64")
-
 if s:running_windows
   set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*
 else
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 endif
 
-if has('gui_running')
+if s:gui_running
   set guifont=Anonymous\ Pro\ for\ Powerline:h13
 endif
 
@@ -26,6 +27,7 @@ let g:airline_powerline_fonts = 1
 runtime macros/matchit.vim
 
 set nobackup
+set nowritebackup
 set noswapfile
 
 colorscheme solarized
@@ -96,7 +98,6 @@ set autoread
 
 set clipboard+=unnamed
 
-set backup
 set history=99999 " big old history
 
 set fileformats=unix,dos,mac " support all three, in this order

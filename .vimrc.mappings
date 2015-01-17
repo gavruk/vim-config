@@ -30,12 +30,16 @@ noremap <silent> <Leader>tn :tabnew<CR>
 noremap <silent> <Leader>th :tabprev<CR>
 noremap <silent> <Leader>tl :tabnext<CR>
 noremap <silent> <Leader>tc :tabclose<CR>
+noremap <silent> <Leader>to :tabonly<CR>
 
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-" Use the bufkill plugin to eliminate a buffer but keep the window layout
-nmap ,bd :BD<cr>
+" Close the current buffer
+map <leader>bd :Bclose<cr>
+
+" Close all the buffers
+map <leader>ba :1,1000 bd!<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -101,3 +105,12 @@ nnoremap <leader>cw mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 " Select all
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap <Leader><Leader>s <Plug>(easymotion-s)
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
