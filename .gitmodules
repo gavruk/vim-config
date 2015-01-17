@@ -112,9 +112,6 @@
 [submodule "bundle/color-solarized"]
 	path = bundle/color-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule "bundle/js-indent"]
-	path = bundle/js-indent
-	url = git@github.com:vim-scripts/JavaScript-Indent.git
 [submodule "bundle/vim-notes"]
 	path = bundle/vim-notes
 	url = git@github.com:xolox/vim-notes.git
@@ -145,3 +142,6 @@
 [submodule "bundle/indenthtml.vim"]
 	path = bundle/indenthtml.vim
 	url = git@github.com:vim-scripts/indenthtml.vim.git
+[submodule "bundle/html5.vim"]
+	path = bundle/html5.vim
+	url = https://github.com/othree/html5.vim.git
