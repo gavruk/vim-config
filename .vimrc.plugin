@@ -114,4 +114,8 @@ let g:NERDTreeWinSize = 40
 "
 let g:EasyMotion_smartcase = 1
 
+" ==================================
+" ===========*WebDevIcons*==========
+" ==================================
+"
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
