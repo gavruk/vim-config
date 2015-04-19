@@ -19,7 +19,7 @@ else
 endif
 
 if s:gui_running
-  set guifont=Anonymous\ Pro\ for\ Powerline:h13
+  set guifont=Anonymice\ Powerline\ Plus\ Nerd\ File\ Types:h13
 endif
 
 let g:airline_powerline_fonts = 1
