@@ -151,3 +151,6 @@
 [submodule "bundle/vim-webdevicons"]
 	path = bundle/vim-webdevicons
 	url = https://github.com/ryanoasis/vim-webdevicons.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
