@@ -17,6 +17,6 @@ source ~/.vim/.vimrc.func
 source ~/.vim/.vimrc.plugin
 
 " source vimrc.local is exists
-if filereadable(glob(".vimrc.local"))
-  source .vimrc.local
+if filereadable(glob(".vimrc"))
+  source .vimrc
 endif
