@@ -3,9 +3,8 @@
 #### Install
 * Wipe out your `~/.vimrc` file and `~/.vim` directory (back up if you wish)
 * `git clone https://github.com/gavruk/vim-config.git ~/.vim`
-* `cd ~/.vim`
-* `sh bootstrap.sh`
 * Start Vim
+* Run `:PlugInstall`
 
 #### Update
 * `cd ~/.vim`
