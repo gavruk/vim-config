@@ -23,7 +23,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tomasr/molokai'
 Plug 'mattn/emmet-vim'
-Plug 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'gregsexton/gitv'
 Plug 'bling/vim-airline'

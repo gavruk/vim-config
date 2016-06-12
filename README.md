@@ -7,9 +7,7 @@
 * Run `:PlugInstall`
 
 #### Update
-* `cd ~/.vim`
-* `sh update-submodules.sh`
-* Start Vim
+* Run `:PlugUpdate`
 
 #### Dependencies
 
