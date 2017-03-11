@@ -34,7 +34,7 @@ let g:ctrlp_custom_ignore = {
 " ==================================
 
 let g:tagbar_left = 0
-let g:tagbar_ctags_bin = 'ctags'
+
 " requires gotags in path
 " go get -u github.com/jstemmer/gotags
 let g:tagbar_type_go = {
