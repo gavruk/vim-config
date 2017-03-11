@@ -56,6 +56,7 @@ Plug 'mxw/vim-jsx'
 Plug 'gavocanov/vim-js-indent'
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
