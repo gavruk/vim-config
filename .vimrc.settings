@@ -98,7 +98,7 @@ set autoread
 
 set clipboard+=unnamed
 
-set history=99999 " big old history
+set history=10000 " big old history
 
 set fileformats=unix,dos,mac " support all three, in this order
 
