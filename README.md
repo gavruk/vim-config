@@ -8,6 +8,8 @@
 * `brew install ctags cmake ack`
 * Start Vim
 * Run `:PlugInstall`
+* Run `:GoInstallBinaries`
+
 
 #### Update
 * Run `:PlugUpdate`
