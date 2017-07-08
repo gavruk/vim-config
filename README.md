@@ -3,6 +3,9 @@
 #### Install
 * Wipe out your `~/.vimrc` file and `~/.vim` directory (back up if you wish)
 * `git clone https://github.com/gavruk/vim-config.git ~/.vim`
+* `ln -s ~/.vim/.vimrc ~/.vimrc`
+* `ln -s /Applications/MacVim.app/Contents/bin/mvim /usr/local/bin/mvim`
+* `brew install ctags cmake ack`
 * Start Vim
 * Run `:PlugInstall`
 
