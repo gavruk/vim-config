@@ -16,7 +16,15 @@ nnoremap ` '
 "nnoremap <Leader>w :wq<CR>
 
 inoremap jk <ESC>
-imap jj <esc>
+inoremap jj <ESC>
+inoremap kk <ESC>
+
+inoremap AA <ESC>A
+inoremap OO <ESC>O
+inoremap <C-l> <ESC>lli
+
+nnoremap <C-f> :b#<CR>
+
 
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>P <Plug>yankstack_substitute_newer_paste
@@ -66,12 +74,6 @@ nnoremap j gj
 nnoremap k gk
 
 nnoremap <leader>. :CtrlPTag<cr>
-
-" Do we have local vimrc?
-if filereadable('.vimrc.local')
-  " If so, go ahead and load it.
-  source .vimrc.local
-endif
 
 map <Leader>d :NERDTreeToggle<CR>
 
