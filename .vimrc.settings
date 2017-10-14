@@ -23,6 +23,7 @@ if s:gui_running
 endif
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'codedark'
 
 runtime macros/matchit.vim
 
@@ -30,7 +31,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-colorscheme solarized
+colorscheme codedark
 set background=dark
 
 set fenc=utf-8 " UTF-8

@@ -104,7 +104,7 @@ let g:html_indent_inctags='html,body,head,tbody'
 " ==================================
 
 let NERDTreeMapOpenInTab='<Leader>n'
-let NERDTreeIgnore = ['\.beam$', '\.pyc$', 'ebin$', '^bin$', '^pkg$', '\.so$', '\.dll$', '\tags$']
+let NERDTreeIgnore = ['\.beam$', '\.pyc$', 'ebin$', '^pkg$', '\.so$', '\.dll$', '\tags$']
 let g:NERDTreeWinSize = 40
 
 

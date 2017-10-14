@@ -42,7 +42,7 @@ if has("autocmd")
     " Things that use two spaces rather than four
     au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2
     au BufRead,BufNewFile *.js set sw=2 sts=2
-    au BufRead,BufNewFile *.jsx set sw=2 sts=2
+    au BufRead,BufNewFile *.jsx,*.vue set sw=2 sts=2
     au BufRead,BufNewFile *.html set sw=2 sts=2
 
     au BufRead,BufNewFile *.go set sw=4 sts=4
@@ -62,6 +62,8 @@ if has("autocmd")
     au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
 
     au BufNewFile,BufRead *.ejs set filetype=html
+
+    autocmd FileType vue syntax sync fromstart
 
     " ctags
     au BufWritePost *.c,*.cpp,*.h,*.go,*js silent! !ctags -R &
