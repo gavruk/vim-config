@@ -37,6 +37,9 @@ noremap <silent> <Leader>tl :tabnext<CR>
 noremap <silent> <Leader>tc :tabclose<CR>
 noremap <silent> <Leader>to :tabonly<CR>
 
+" Do not overwrite register after paste
+xnoremap p pgvy
+
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
