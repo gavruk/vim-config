@@ -42,6 +42,7 @@ if has("autocmd")
     " Things that use two spaces rather than four
     au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2
     au BufRead,BufNewFile *.js set sw=2 sts=2
+    au BufRead,BufNewFile *.ts set sw=4 sts=4
     au BufRead,BufNewFile *.jsx,*.vue set sw=2 sts=2
     au BufRead,BufNewFile *.html set sw=2 sts=2
 
@@ -52,6 +53,17 @@ if has("autocmd")
     "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
     "au BufWritePre *.go Fmt
     "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+
+    augroup FiletypeGroup
+        autocmd!
+        au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    augroup END
+
+    let g:ale_linters = {
+    \   'javascript': ['eslint'],
+    \}
+
 
     au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
 

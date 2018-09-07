@@ -15,9 +15,11 @@ nnoremap ` '
 "nnoremap <Leader>s :w<CR>
 "nnoremap <Leader>w :wq<CR>
 
-inoremap jk <ESC>
-inoremap jj <ESC>
-inoremap kk <ESC>
+
+echo $FZF_DEFAULT_COMMAND
+
+inoremap <C-p> <ESC>:Files<CR>
+noremap <C-p> <ESC>:Files<CR>
 
 inoremap AA <ESC>A
 inoremap OO <ESC>O

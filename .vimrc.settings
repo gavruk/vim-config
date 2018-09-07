@@ -117,7 +117,7 @@ set completeopt=longest,menuone,preview
 set nowrap " do not wrap line
 set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
 
-" Folding 
+" Folding
 set foldenable " Turn on folding
 set foldmethod=indent " Fold on the indent
 set foldmarker={,} " use simple markers
@@ -168,7 +168,7 @@ set ruler
 " Show matching brackets
 set showmatch
 
-" Make sure that unsaved buffers that are to be put in the background are 
+" Make sure that unsaved buffers that are to be put in the background are
 " allowed to go in there (ie. the "must save first" error doesn't come up)
 set hidden " you can change buffers without saving
 
@@ -208,9 +208,6 @@ set wildignore=*.pyo,*.pyc,*.dll,*.o,*.obj,*.bak,*.exe,*.pyc,*.jpg,*.gif,*.png "
 set wildignore+=tags
 
 set wildmode=list:longest " turn on wild mode huge list
-
-" Cure hangs during compiles?
-set swapsync=
 
 set t_Co=256
 

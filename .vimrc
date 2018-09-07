@@ -4,8 +4,6 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 
@@ -13,15 +11,27 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'gavruk/svg_snippets'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+
+Plug 'digitaltoad/vim-pug'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+
+Plug 'itchyny/lightline.vim'
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'w0rp/ale'
+
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
 Plug 'paradigm/TextObjectify'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'gregsexton/gitv'
-Plug 'bling/vim-airline'
 Plug 'Valloric/MatchTagAlways'
 Plug 'mileszs/ack.vim'
 Plug 'groenewege/vim-less'
