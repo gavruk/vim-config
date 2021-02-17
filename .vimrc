@@ -1,57 +1,62 @@
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
+
+" Python Setting {
+  set pythondll=/usr/local/Frameworks/Python.framework/Versions/3.9/Python
+  set pythonhome=/usr/local/Frameworks/Python.framework/Versions/3.9
+  set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.9/Python
+  set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.9
+" }
+"
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
+
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdcommenter'
+
 Plug 'Lokaltog/vim-easymotion'
-Plug 'tpope/vim-fugitive'
 
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-Plug 'gavruk/svg_snippets'
 
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
-
-Plug 'digitaltoad/vim-pug'
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
-Plug 'itchyny/lightline.vim'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'Quramy/tsuquyomi'
+
+Plug 'vim-airline/vim-airline'
 
 Plug 'w0rp/ale'
 
-Plug 'scrooloose/nerdcommenter'
-Plug 'paradigm/TextObjectify'
-Plug 'moll/vim-node'
-Plug 'pangloss/vim-javascript'
-Plug 'mattn/emmet-vim'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'gregsexton/gitv'
+"Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'mileszs/ack.vim'
-Plug 'groenewege/vim-less'
-Plug 'elzr/vim-json'
 Plug 'ap/vim-css-color'
-Plug 'fatih/vim-go'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'altercation/vim-colors-solarized'
+"Plug 'fatih/vim-go'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'airblade/vim-gitgutter'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mhinz/vim-startify'
-Plug 'vim-scripts/indenthtml.vim'
+Plug 'tpope/vim-fugitive'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'mhinz/vim-startify'
 Plug 'othree/html5.vim'
-Plug 'ryanoasis/vim-webdevicons'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
-Plug 'tomasiser/vim-code-dark'
+Plug 'ryanoasis/vim-devicons'
+Plug 'yggdroot/indentline'
+"Plug 'mbbill/undotree'
 
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
+
+
+Plug 'morhetz/gruvbox'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -66,6 +71,7 @@ source ~/.vim/.vimrc.mappings
 source ~/.vim/.vimrc.autocmd
 source ~/.vim/.vimrc.func
 source ~/.vim/.vimrc.plugin
+
 
 " source vimrc.local is exists
 if filereadable(glob(".vimrc.local"))

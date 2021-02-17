@@ -1,3 +1,5 @@
+autocmd vimenter * NERDTree
+
 if has("autocmd") && exists("+omnifunc")
   autocmd Filetype *
         \ if &omnifunc == "" |
@@ -17,73 +19,64 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 
 autocmd FileType go set list!
 
-if has("autocmd")
-  " Save when losing focus
-  au FocusLost * :silent! wall
+" Save when losing focus
+au FocusLost * :silent! wall
 
-  " Resize splits when the window is resized
-  au VimResized * :wincmd =
+" Resize splits when the window is resized
+au VimResized * :wincmd =
 
-  " Make sure Vim returns to the same line when you reopen a file.
-  augroup line_return
-    au!
-    au BufReadPost *
-          \ if line("'\"") > 0 && line("'\"") <= line("$") |
-          \     execute 'normal! g`"zvzz' |
-          \ endif
-  augroup END
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+au!
+au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
 
-  augroup vimrcAu
-    " Clear!
-    au!
+augroup vimrcAu
+" Clear!
+au!
 
-    autocmd Syntax javascript setlocal isk+=$
+autocmd Syntax javascript setlocal isk+=$
 
-    " Things that use two spaces rather than four
-    au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2
-    au BufRead,BufNewFile *.js set sw=2 sts=2
-    au BufRead,BufNewFile *.ts set sw=4 sts=4
-    au BufRead,BufNewFile *.jsx,*.vue set sw=2 sts=2
-    au BufRead,BufNewFile *.html set sw=2 sts=2
+" Things that use two spaces rather than four
+au BufRead,BufNewFile *.rb,*.rhtml set sw=2 sts=2
+au BufRead,BufNewFile *.js set sw=2 sts=2
+au BufRead,BufNewFile *.ts set sw=2 sts=2 expandtab
+au BufRead,BufNewFile *tsx,*.jsx,*.vue set sw=2 sts=2
+au BufRead,BufNewFile *.html set sw=2 sts=2
 
-    au BufRead,BufNewFile *.go set sw=4 sts=4
-    au BufRead,BufNewFile *.go set noexpandtab
+au BufRead,BufNewFile *.go set sw=4 sts=4
+au BufRead,BufNewFile *.go set noexpandtab
 
-    " Go setup assumptions: golint, gocode, gotags all in path
-    "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
-    "au BufWritePre *.go Fmt
-    "au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
+" Go setup assumptions: golint, gocode, gotags all in path
+"au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
+"au BufWritePre *.go Fmt
+"au BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
-    augroup FiletypeGroup
-        autocmd!
-        au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-    augroup END
-
-    let g:ale_linters = {
-    \   'javascript': ['eslint'],
-    \}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 
-    au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
+au BufRead,BufNewFile MakeFile,Makefile,makefile set noexpandtab sw=8 sts=8 syntax=make listchars=tab:\|\ ,trail:- " so does make
 
-    " Override types
-    au BufNewFile,BufRead *.ahk set filetype=ahk " Autohotkey
-    au BufNewFile,BufRead *.ps1 set filetype=ps1 " Powershell
-    au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
-    au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
+" Override types
+au BufNewFile,BufRead *.ahk set filetype=ahk " Autohotkey
+au BufNewFile,BufRead *.ps1 set filetype=ps1 " Powershell
+au BufNewFile,BufRead *.md set filetype=markdown spell " Markdown and spelling on
+au BufNewFile,BufRead *.dtl set filetype=htmldjango " Django Templates
 
-    au BufNewFile,BufRead *.ejs set filetype=html
+au BufNewFile,BufRead *.ejs set filetype=html
 
-    autocmd FileType vue syntax sync fromstart
+autocmd FileType vue syntax sync fromstart
 
-    " ctags
-    au BufWritePost *.c,*.cpp,*.h,*.go,*js silent! !ctags -R &
-
-    " markdown shortcut
-    au BufRead,BufNewFile *.md set filetype=markdown
-  augroup END
-endif
+au BufRead,BufNewFile *.md set filetype=markdown
+augroup END
 
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)

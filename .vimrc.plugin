@@ -9,7 +9,7 @@ let s:running_windows = has("win16") || has("win32") || has("win64")
 " ==================================
 
 let NERDTreeMapOpenInTab='<Leader>n'
-let NERDTreeIgnore = ['\.beam$', '\.pyc$', 'ebin$', '^pkg$', '\.so$', '\.dll$', '\tags$']
+let NERDTreeIgnore = ['\.beam$', '\.pyc$', 'ebin$', '\.so$', '\.dll$', '\tags$']
 let g:NERDTreeWinSize = 40
 
 
@@ -37,6 +37,7 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \ 'vue' : 1,
     \ 'jsx' : 1,
+    \ 'tsx' : 1,
     \}
 
 " ==================================
@@ -48,3 +49,21 @@ if !exists("g:ycm_semantic_triggers")
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 
+
+
+" ==================================
+" ==========*NERDTREE GIT*==========
+" ==================================
+"
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }

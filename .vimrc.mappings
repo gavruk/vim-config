@@ -16,13 +16,10 @@ nnoremap ` '
 "nnoremap <Leader>w :wq<CR>
 
 
-echo $FZF_DEFAULT_COMMAND
-
 inoremap <C-p> <ESC>:Files<CR>
 noremap <C-p> <ESC>:Files<CR>
 
-inoremap AA <ESC>A
-inoremap OO <ESC>O
+inoremap jj <ESC>
 inoremap <C-l> <ESC>lli
 
 nnoremap <C-f> :b#<CR>
@@ -30,7 +27,7 @@ nnoremap <C-f> :b#<CR>
 
 nnoremap <leader><space> :noh<cr>
 
-imap <C-Space> <C-X><C-O>
+imap <C-Space> <C-n>
 
 " Working with tabs"
 noremap <silent> <Leader>tn :tabnew<CR>
