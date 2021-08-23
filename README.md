@@ -17,7 +17,7 @@ alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias vimr="/Applications/VimR.app/Contents/Resources/vimr"
 ```
 * Download patched font `https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode/Regular/complete`
-* `brew install fd`
+* `brew install fd ack`
 * Start Vim
 * Run `:PlugInstall`
 
