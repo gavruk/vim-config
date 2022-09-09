@@ -2,10 +2,13 @@
 "This must be first, because it changes other options as a side effect.
 
 " Python Setting {
-  set pythondll=/usr/local/Frameworks/Python.framework/Versions/3.9/Python
-  set pythonhome=/usr/local/Frameworks/Python.framework/Versions/3.9
-  set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.9/Python
-  set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.9
+  set pythondll=/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/Python3
+  set pythonhome=/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8
+  set pythonthreedll=/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/Python3
+  set pythonthreehome=/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8
+
+  let g:python_host_prog = 'python'
+  let g:python3_host_prog = 'python3'
 " }
 "
 set nocompatible

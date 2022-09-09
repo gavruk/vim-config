@@ -52,6 +52,7 @@ au BufRead,BufNewFile *.go set noexpandtab
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
 " Go setup assumptions: golint, gocode, gotags all in path
 "au BufRead,BufNewFile *.go set noexpandtab sw=4 sts=4 syntax=go listchars=tab:\|\ ,trail:- " Go uses tabs
